@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #all{
+            width: 580px;
+            height: 580px;
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+        }
+
+        #top{
+            width: 100%;
+            height: calc(33.33% - 6.66px);
+            background-color: pink;
+        }
+
+        #mid{
+            width: 100%;
+            height: calc(33.33% - 6.66px);
+            background-color: rgb(0, 0, 0);
+            margin: 10px 0;
+        }
+
+
+
+        #mid-l{
+            width: calc(25% - 5px);
+            height: 100%;
+            background-color: rgb(240, 239, 158);
+            float: left;
+            margin: 0 10px 0 0 ;
+        }
+
+        #mid-r{
+            width: calc(75% - 5px);
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.699);
+            float: right;
+        }
+
+        #mid-r1{
+            width: 100%;
+            height: calc(33.33% - 6.66px);
+            background-color: plum;
+        }
+
+        #mid-r2{
+            width: 100%;
+            height: calc(33.33% - 6.66px);
+            background-color: rgb(233, 200, 177);
+            margin: 10px 0;
+        }
+
+        #mid-r3{
+            width: 100%;
+            height: calc(33.33% - 6.66px);
+            background-color:green;
+        }
+
+        #bot{
+            width: 100%;
+            height: calc(33.33% - 6.66px);
+            background-color: rgb(173, 113, 38);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="top"></div>
+        <div id="mid">
+            <div id="mid-l"></div>
+            <div id="mid-r">
+                <div id="mid-r1"></div> 
+                <div id="mid-r2"></div> 
+                <div id="mid-r3"></div> 
+            </div> 
+        </div>
+        <div id="bot"></div>
+</body>
+</html>

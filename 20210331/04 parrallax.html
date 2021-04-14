@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- 本範例要做的事有 -->
+    <!-- 1.如何剛好占滿一個畫面? -->
+            <!-- 設width:100%以及height:100vh -->
+
+    <!-- 2. parallax 效果怎麼做?-->
+            <!-- 用background-attachment:fixed -->
+
+    <!-- 3. 文字區塊 高度會是活動的-->
+            <!-- 不要設文字方塊的寬高，用padding跟內容去推就好 -->
+
+    <!-- 4.id與class的混合使用技巧 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        *{box-sizing: border-box;}
+        *{word-wrap:break-word;}
+        
+        html{scroll-behavior: smooth;}
+
+        body{
+            margin: 0;
+            padding-top: 55px;
+        }
+
+        .full-page{
+            width: 100%;
+            height: 100vh;
+            /* view height */
+            background-color: aquamarine;
+
+            position: relative;
+        }
+
+        #nav{
+            padding: 15px 30%;
+            width: 100%;
+            height: 55px;
+            background-color: rgb(243, 230, 212);
+            text-align: center;
+
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        a{
+            margin-right: 15px;
+            }
+
+        a:hover{
+            background-color: burlywood;
+            border-radius: 30px;
+        }
+
+        #block1{
+            background-image: url(./img/flower.jpg);
+        }
+
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color:rgba(255, 255, 255, 0.3);
+        }
+
+        .navword{
+            color: brown;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            font-family: sans-serif;
+        }
+
+        .word-bg{
+            /* width: 331px;
+            height: 64px; */
+
+            /* 用padding跟內容去擠，不設寬度才能自動隨字數調整高 */
+
+            color: #ffffff;
+            padding: 18px;
+            font-size: 25px;
+            font-weight: 400;
+            font-family: sans-serif;
+            letter-spacing: 10px;
+            text-align: center;
+
+            /* 舊方法置中不適用，因為沒有寬高了，無法cala */
+            /* position: absolute;
+            top: 50%;
+            left: calc(50% - 165px);
+             */
+
+             /* 新方法 */
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+             /* 上下左右都要打(-00%,-00%) */
+        }
+
+        .bg-g{
+            background-color: gray;
+        }
+
+        .bg-w{
+            background-color: white;
+        }
+
+        .bg-b{
+            background-color:#282E34;
+        }
+        
+        .parallax{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* parallax rolling 的視差這樣做 */
+            background-attachment:fixed ;
+        }
+
+        .pad{
+            padding: 50px 80px;
+        }
+
+        h3{
+            text-align: center;
+            margin: 20px 0;
+            letter-spacing: 5px;
+            font-size: 20px;
+            color: black;
+            font-family: sans-serif;
+        }
+
+        p{
+            text-align: left;
+            margin: 15px 0;
+            line-height: 1.8;
+            font-size: 15px;
+            font-family: sans-serif;
+            text-align: justify;
+        }
+              
+        .half-page{
+            width: 100%;
+            height: 40vh;
+            /* view height */
+
+            position: relative;
+        }
+
+        #block3{
+            background-image: url(./img/smoke.jpg);
+        }
+
+        .ww{
+            color: white;
+        }
+
+        #block5{
+            background-image: url(./img/girl.jpg);
+        }
+
+        #block7{
+            background-image: url(./img/makeup.jpg);
+        }
+
+        #block2{
+            position: relative;
+        }
+
+        #block2-anchor{
+            position: absolute;
+            top: -55px;
+            left: 0;
+        }
+
+        #block4{
+            position: relative;
+        }
+
+        #block4-anchor{
+            position: absolute;
+            top: -55px;
+            left: 0;
+        }
+
+        #block6{
+            position: relative;
+        }
+
+        #block6-anchor{
+            position: absolute;
+            top: -55px;
+            left: 0;
+        }
+
+    </Style>
+</head>
+
+<body>
+    <div id="nav">
+        <a href="#block2-anchor" class="navword">Part 1</a>
+        <a href="#block4-anchor"class="navword">Part 2</a>
+        <a href="#block6-anchor"class="navword">Part 3</a>
+    </div>
+
+    <div id="block1" class="full-page parallax">
+        <div class="mask">
+            <div class="word-bg bg-g">SCROLL DOWN</div>
+        </div>
+    </div>
+
+    <div id="block2" class="parallax bg-w pad">
+        <div id="block2-anchor"></div>
+        <h3 id="block2title">PARALLAX DEMO</h3>
+        <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
+    </div>
+
+    <div id="block3" class="half-page parallax">
+        <div class="mask">
+            <div class="word-bg">LESS HEIGHT</div>
+        </div>
+    </div>
+
+    <div id="block4" class="bg-b pad ww">
+        <div id="block4-anchor"></div>
+        <p id="block4title">Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+
+    <div id="block5" class="half-page parallax">
+        <div class="mask">
+            <div class="word-bg">SCROLL UP</div>
+        </div>
+    </div>
+
+    <div id="block6" class="bg-b pad ww">
+        <div id="block6-anchor"></div>
+        <p id="block6title">Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+
+    <div id="block7" class="full-page parallax">
+        <div class="mask">
+            <div class="word-bg bg-g">COOL!</div>
+        </div>
+    </div>
+
+</body>
+</html>

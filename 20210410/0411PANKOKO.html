@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANKOKO</title>
+
+    <style>
+        body {
+            margin: 0;
+            text-align: justify;
+            letter-spacing: 5px;
+            position: relative;
+        }
+
+        html{scroll-behavior: smooth;}
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration:none;
+        }
+        a:hover{
+            color: black;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* nav開始 */
+        nav {
+            height: 100vh;
+            background-color: pink;
+        }
+
+        /* nav-top開始 */
+        .nav-top {
+            height: 60px;
+            width: 100%;
+            background-color: black;
+            padding: 5px 0;
+            box-shadow: -3px 5px 16px -2px rgba(0, 0, 0, 0.57);
+
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        .container {
+            width: 65%;
+            height: 100%;
+            margin: auto;
+            /* background-color: cadetblue; */
+        }
+
+        .logo {
+            width: 160px;
+            height: 50px;
+
+            background-image: url(./IMG/logo1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* nav-top結束 */
+        /* nav-banner開始 */
+        .nav-banner {
+            height: calc(100vh);
+            background-image: url(./IMG/sit2.jpg);
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* nav-banner結束 */
+        /* nav-btn開始 */
+        .nav-btn {
+            height: 60px;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        .nav-btn .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+        }
+
+        .btn {
+            width: 20%;
+            height: 40px;
+            /* background-color: rgb(41, 41, 41); */
+            border-radius: 20px;
+
+            color: rgb(161, 161, 161);
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        /* nav-btn結束 */
+        /* nav結束 */
+
+
+        /* main開始 */
+        /* block1開始 */
+        .block1 {
+            height: calc(100vh - 110px);
+            background-color: burlywood;
+            background-image: url(./IMG/door.jpg);
+
+            position: relative;
+        }
+
+        #block1-anchor{
+            position: absolute;
+            top: -60px;
+            left: 0;
+        }
+
+        .block1 .mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(50, 49, 49, 0.6);
+
+            display: flex;
+            /* align-items: center;
+            justify-content: center; */
+            /* 神奇的display:flex如果下面只有一個子層且子層有用margin:auto，那麼flex會使子層上下也會跟著margin:auto，所以不用打 */
+        }
+
+        .block1 .container {
+            width: 65%;
+            height: 65%;
+
+            display: flex;
+        }
+
+        .block1 .container .bgc {
+            width: 50%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .block1 .container .bgc .block1-img {
+            width: 100%;
+            height: 100%;
+
+            background-image: url(./IMG/door.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .block1 .container .block1-text {
+            width: 50%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10% 8%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .block1 .container .block1-text .h1 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            font-weight: bolder;
+        }
+
+        .block1 .container .block1-text .p1 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        /* block1結束 */
+        /* block2開始 */
+        .block2{
+            height: calc(100vh - 110px);
+            background-color: plum;
+
+            
+            background-image: url(./IMG/meet2.jpg);
+            background-size: cover;
+            background-position: center;
+            
+            position: relative;
+        }
+
+        #block2-anchor{
+            position: absolute;
+            top: -60px;
+            left: 0;
+        }
+
+        .bgc-img-mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            
+            display: flex;
+            /* align-items: center;
+            justify-content: center; */
+        }
+        
+        .block2 .container {
+            width: 65%;
+            height: 65%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .block2 .container .block2-text {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5% 5%;
+            border-radius: 20px;
+            
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h2{            
+            color: white;
+            margin: 0 0 30px 0;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .p2{
+            font-size: 22px;
+            color: white;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* block2結束 */
+
+        /* block3開始 */
+        .block3{
+            height: calc(100vh - 110px);
+            background-color: palegoldenrod;
+            
+            display: flex;
+
+            position: relative;
+        }
+
+        #block3-anchor{
+            position: absolute;
+            top: -60px;
+            left: 0;
+        }
+
+        .block3-left{
+            height: 100%;
+            width: 50%;
+            background-color: paleturquoise;
+
+            background-image: url(./IMG/18.㕩肉舖_餐點照_Shabu雲丹燒\ 雙人份.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .block3-left .bgc{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding-right: 10%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .block3-left-text{
+            width: 70%;
+            height: 60%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h3 {
+            background-color: white;
+            padding: 10px;
+            color: rgb(72, 72, 72);
+            font-size: 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+
+            border-radius: 10px;
+        } 
+
+        .h3-2{
+            color: white;
+            font-size: 26px;
+            margin: 20px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .p3{
+            color: white;
+            font-size: 22px;
+            font-family: 'Noto Sans TC', sans-serif;
+        } 
+
+        .block3-right{
+            height: 100%;
+            width: 50%;
+            background-color: palevioletred;
+
+            background-image: url(./IMG/rice.jpg); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .block3-right .bgc{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding-left: 10%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .block3-right-text{
+            width: 70%;
+            height: 60%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        /* block3結束 */
+
+        /* block4開始 */
+        .block4{
+            height: calc(100vh - 110px);
+            background-color: plum;
+
+            
+            background-image: url(./IMG/fire.jpg);
+            background-size: cover;
+            background-position: center;
+
+            position: relative;
+        }
+
+        #block4-anchor{
+            position: absolute;
+            top: -60px;
+            left: 0;
+        }
+
+        .bgc-img-mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            
+            display: flex;
+        }
+
+        .block4 .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .block4-up{
+            width: 100%;
+            height: 50%;
+            /* background-color: rgb(211, 211, 211); */
+            padding: 1% 0 0.5% 0;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .block4-up-img{
+            width: 49%;
+            height: 100%;
+
+            background-image:url(./IMG/god1.jpg);
+            background-size: cover;
+            background-position: center;
+
+            border-radius: 50px 0 50px 0;
+        }
+
+        .block4-down{
+            width: 100%;
+            height: 50%;
+            /* background-color: rgb(255, 218, 236); */
+            padding: 0.5% 0 1% 0;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        .media-block4-down-img{
+            display: none;
+        }
+
+        .block4-down-img{
+            width: 49%;
+            height: 100%;
+
+            background-image:url(./IMG/god2.jpg);
+            background-size: cover;
+            background-position: left bottom;
+
+            border-radius: 50px 0 50px 0 ;
+        }
+
+        .block4-up-text , .block4-down-text{
+            width: 49%;
+            height: 100%;
+            background-color: rgba(77, 77, 77, 0.5);
+            padding: 1%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 0 50px 0 50px
+        }
+
+
+        .h4{            
+            color: white;
+            margin: 0 0 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .p4{
+            font-size: 18px;
+            color: white;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* block4結束 */
+        /* block5開始 */
+        /* block5結束 */
+        /* main結束 */
+
+        /* footer開始 */
+        footer{
+            width: 100%;
+            height: 10vh;
+            background-color: black;
+        }
+
+        footer .container{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .logo2{
+            width: 60px;
+            height: 60px;
+            background-image: url(./IMG/logo2.jpg);
+            background-size: cover;
+            background-position: center;
+
+            margin-right: 50px;
+        }
+
+        .pf{
+            color: white;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .footer-nav{
+            width: 100%;
+            height: 60px;
+            background-color: black;
+        }
+        /* footer結束 */
+
+        @media(max-width:770px) {
+            .nav-btn .container {
+                width: 90%;
+                display: flex;
+                align-items: center;
+            }
+            .btn {
+                width: 20%;
+                font-size: 18px;
+            }
+            .block1 .container{
+                width: 95%;
+                height: 95%;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            .block1 .container .bgc {
+                height: 65%;
+                width: 100%;
+            }
+
+            .block1 .container .block1-text {
+                height:35% ;
+                width: 100%;
+            }
+            .block1 .container .block1-text .h1 {
+                font-size: 24px;
+            }
+            .block1 .container .block1-text .p1 {
+                font-size: 15px;
+            }
+            /* block1結束 */
+
+            .block2 .container {
+                width: 95%;
+                height: 95%;
+            }
+            .block2 .container .block2-text {
+                width: 100%;
+                height: 50%;
+                background-color:unset;
+            }
+            .h2{            
+                margin: 0 0 20px 0;
+                font-size: 24px;
+            }
+            .p2{
+                font-size: 15px;
+            }
+            .media-block2-img{
+                height: 50%;
+                width: 100%;
+                background-image: url(./IMG/meet2.jpg);
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+            }
+            /* block2結束 */
+            .block3{
+                flex-direction: column;
+                height: 110vh;
+            }
+            .block3-left,.block3-right{
+                height: 50%;
+                width: 100%;
+            }
+
+            .block3-left-text, .block3-right-text{
+                width: 90%;
+                height: 90%;
+            }
+            .h3{
+                font-size: 25px;
+                letter-spacing: 2px;
+            }
+            .h3-2{
+                font-size: 20px;
+                margin: 10px;
+            }
+            .p3{
+                font-size: 15px;
+            }
+            /* block3結束 */
+            .block4{
+                height: 120vh;
+            }
+            .block4 .container {
+                width: 90%;
+                height: 97%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .block4-up,.block4-down{
+                width: 100%;
+                height: 50%;
+            /* background-color: rgb(211, 211, 211); */
+                padding: 1% 0 0.5% 0;
+                
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .block4-up-img{
+                width: 100%;
+                height: 50%;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            .block4-down-img{
+                display: none;
+            }
+            .media-block4-down-img{
+                display: block;
+
+                width: 100%;
+                height: 50%;
+                background-image:url(./IMG/god2.jpg);
+                background-size: cover;
+                background-position: center;
+                border-radius: 5px;
+                /* margin-bottom: 5px; */
+            }
+            .block4-up-text , .block4-down-text{
+                width: 100%;
+                height: 50%;
+                padding: 0;
+                background-color:unset;
+                border-radius: unset;
+            }
+            .block4-up-text{
+                margin-bottom: 10px;
+            }
+            .h4{            
+                margin: 0 0 10px 0;
+                font-size: 20px;
+            }
+            .p4{
+                font-size: 15px;
+            }
+            /* block4結束 */
+            footer .container{
+                width: 85%;
+            } 
+            .logo2{
+                width: 60px;
+                height: 60px;
+                margin-right: 20px;
+            }
+            .pf{
+                font-size: 12px;
+                letter-spacing: 1px;
+                font-family: 'Noto Sans TC', sans-serif;
+            }
+            
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav>
+        <div class="nav-top">
+            <div class="container">
+                <div class="logo"></div>
+            </div>
+        </div>
+
+        <div class="nav-banner">
+            <div class="mask"></div>
+        </div>
+
+        <div class="nav-btn">
+            <div class="container">
+                <a href="#block1-anchor" class="btn">起點</a>
+                <a href="#block2-anchor" class="btn">溯源</a>
+                <a href="#block3-anchor" class="btn">精選</a>
+                <a href="#block4-anchor" class="btn">新品</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="block1">
+            <div class="mask">
+                <div id="block1-anchor"></div>
+                <div class="container">
+                    <div class="bgc">
+                    <div class="block1-img"></div>
+                    </div>
+                    <div class="block1-text">
+                        <div class="h1">老屋崛起</div>
+                        <div class="p1">燈光斜斜透進在牆面上暈開。
+                        老牆面似乎帶點慵懶，卻又剛直般豎立在屋中央，正驕傲地訴說著它的前世今生，
+                        過往的年華歲月展現無疑。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block2">
+            <div class="bgc-img-mask">
+                <div id="block2-anchor"></div>
+                <div class="container">
+                    <div class="block2-text">
+                        <div class="h2">日本高山A5飛驒牛</div>
+                        <div class="p2">多次榮獲全日本和牛品質評選會最優秀獎，肉質經日本食用牛等級評定協會評定為5級。
+                        在岐阜縣内經過14個月以上肥育的黑毛和牛，飼養場需經過飛驒牛品牌推進會登錄制度所認可。
+                        因養育飛驒牛的牧場海拔多處於千公尺以上，在這樣山青水秀氣溫較低的環境下飼養出來的「飛驒牛」肉質柔嫩，擁有獨特的美如大理石般的霜降紋路 ，甘香的油脂與濃鬱的肉味以及入口即化的口感。
+                        </div>
+                    </div>
+                    <div class="media-block2-img"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="block3">
+            <div id="block3-anchor"></div>
+            <div class="block3-left">
+                <div class="bgc">
+                    <div class="block3-left-text">
+                        <div class="h3">SHABU雲丹燒</div>
+                        <div class="h3-2">※超奢華和牛海膽捲※</div>
+                        <div class="p3">㕩肉舖熟客才知道的隱藏版石鍋拌飯，首次在肉食節公開！這絕對不是你以為的那種石鍋拌飯，而是選用油花甜美的飛驒和牛之生牛肉、大量鮭魚卵，並直接以兩種日本海膽替代調味料，攪拌後每一粒米都附著海膽融化的風味，如海水在口中的鹹甘清新，加上生牛肉的滑嫩、鮭魚卵的爆炸，多重口感撞擊出相當有趣味道，這碗絕對是必吃。</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="block3-right">
+                <div class="bgc">
+                    <div class="block3-right-text">
+                        <div class="h3">飛驒和牛雲丹石鍋拌飯</div>
+                        <div class="h3-2">※以海膽替代鹽調味※</div>
+                        <div class="p3">你一定沒想到的飛驒和牛最美味吃法，就是美食刁客㕩肉舖老闆私房的Shabu雲丹燒。取涮涮鍋的Shabu為名，意思是將飛驒和牛的紐約客肉片，在高溫炭爐如同涮肉的手法快速燒烤，保留和牛肉最大量的油脂美味，最後沾上蛋黃、捲入海膽一口享用——才知道，原來和牛的最佳調味料並不是鹽之花，而是海膽吶！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="block4">
+            <div class="bgc-img-mask">
+                <div id="block4-anchor"></div>
+               <div class="container">
+                    <div class="block4-up">
+                        <div class="block4-up-img"></div>
+                        <div class="block4-up-text">
+                            <div class="h4">臺灣首隻神戶母牛</div>
+                            <div class="p4">由於臺灣法規僅能引進年齡為30個月以內的日本和牛，因此短短時間內要培育到A5且達到BMS12等級，況且又是本身稀少的珍貴母牛，在培育的困難度又高上許多，故連在日本當地一年，能恰好產出如此規格的神戶母牛是完完全全個位數的。</div>
+                        </div>
+                    </div>
+
+
+                    <div class="block4-down">
+                        <div class="media-block4-down-img"></div>
+                        <div class="block4-down-text">
+                            <div class="p4">而你/妳，不能不知道母牛比公牛還來得美味，她的體型較小，但身上的風味清爽，不論其油酯與柔軟度，與公牛相比都更加來得細緻，這是入口後能夠立刻感受的明顯差異，當這些原因述總下來，就能知道她的稀有，畢竟下次再遇見神戶母牛，已經不曉得在多久之後，與其這回錯過，不如當下趕快擁有。</div>
+                        </div>
+                        <div class="block4-down-img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="block5">
+            <div class="block5-img"></div>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <div class="logo2"></div>
+            <div class="pf">© 2017 PANKOKO All Rights Reserved.</div>
+        </div>
+        <div class="footer-nav"></div>
+    </footer>
+</body>
+
+</html>

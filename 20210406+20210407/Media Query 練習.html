@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        a{
+            text-decoration:none;
+        }
+
+        #nav {
+            width: 300px;
+            height: 100vh;
+            background-color: bisque;
+            float: left;
+        }
+
+        #nav .container {
+            width: 150px;
+            height: 100%;
+            background-color: bisque;
+            margin: auto;
+            padding-top: 75px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 50px auto;
+            border-radius: 10px;
+            background-image: url(./img/face2.jpg);
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            background-color: cadetblue
+            
+        }
+
+
+        .btn-group {
+            width: 150px;
+            height: 200px;
+            /* background-color: bisque; */
+        }
+
+        .btn {
+            width: 100%;
+            height: 60px;
+            border-radius: 10px;
+            background-color: white;
+
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            color: purple;
+            margin-bottom: 10px;
+        }
+
+        #main {
+            width: calc(100% - 300px);
+            height: 100vh;
+            background-color: rgb(247, 215, 220);
+            float: left;
+        }
+
+        #main .container {
+            width: 750px;
+            height: 100vh;
+            background-color: rgb(247, 215, 220);
+            position: relative;
+            margin: auto;
+        }
+
+        .img-group {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: calc(50% - 250px);
+            /* background-color: rgb(65, 61, 61); */
+            /* 這個會讓間隔的線變黑 */
+        }
+
+        .image {
+            float: left;
+            width: 33%;
+            height: 100%;
+            margin: auto;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        .image:hover {
+            opacity: 0.5;
+            transition: 0.8s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            opacity: 0.5;
+            transition: 0s;
+        }
+
+        .logo:hover {
+            background-image: url(./img/fcae.jpg);
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        #x {
+            background-color: plum;
+            background-image: url(./img/flower1.jpg);
+        }
+
+        #y {
+            margin: 0 0.5%;
+            background-color: royalblue;
+            background-image: url(./img/flower4.jpg);
+        }
+
+        #z {
+            background-image: url(./img/flower2.jpg);
+            background-color: seagreen;
+        }
+
+
+        @media(max-width:1280px) {
+            #main .container {
+                width: 750px;
+                margin: auto;
+            }
+
+            #x {
+                width: 100%;
+                height: calc(50% - 5px);
+            }
+
+            #y,
+            #z {
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+                line-height: 250px;
+                margin: 10px 0 0 0;
+            }
+
+            #y {
+                margin-right: 10px;
+            }
+        }
+
+        @media(max-width:1120px) {
+            #nav {
+                width: 100%;
+                height: 120px;
+            }
+
+            #main {
+                width: 100%;
+                /* 為了讓螢幕較小的平板也可閱讀，且main的大小不被螢幕高度侷限，可搭配min-height達成 */
+                /* height: calc(100vh - 120px); */
+                min-height: calc(100vh - 120px);
+                height: unset;
+            }
+
+            #nav .container {
+                width: 90%;
+                padding-top: 10px;
+            }
+
+            #main .container {
+                width: 90%;
+                height: calc(100vh - 120px);
+
+                padding: calc(calc(100vh - 920px) / 2) 0px;
+            }
+
+            .logo {
+                float: left;
+                width: 100px;
+                height: 100px;
+            }
+
+            .btn-group {
+                float: right;
+                height: 100px;
+                width: unset;
+                padding: 20px 0;
+            }
+
+            .btn-group a {
+                float: left;
+            }
+
+            .btn {
+                float: left;
+                width: 100px;
+                margin-left: 20px;
+            }
+
+            .img-group {
+                width: 100%;
+                height: 800px;
+                /* 有position的話小螢幕的人img會蓋過nav */
+                /* top: calc(50% - 250px); */
+                position: static;
+            }
+        }
+
+        @media(max-width:576px) {
+            #nav {
+                height: 80px;
+            }
+
+            #nav .container{
+                position: relative;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+
+                position: absolute;
+                top: calc(50% - 30px);
+                left: calc(50% - 30px);
+            }
+
+            .menu-btn{
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                border-radius: 10px;
+
+                position: absolute;
+                top: calc(50% - 25px);
+                left: 0
+            }
+
+            .menu-btn:hover + .btn-group{
+                display: block;
+            }
+
+            .btn-group {
+                float: right;
+                width: 110px;
+                height: 280px;
+                padding-top: 80px;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: none;
+            }
+
+            .btn-group:hover{
+                display: block;
+            }
+
+            .btn {
+                float: unset;
+                width: 100%;
+                height: 60px;
+                margin-bottom: 10px;
+                margin-left: 0;
+            }
+            
+            #main {
+                width: 100%;
+                height: calc(100vh - 80px);
+                padding: 0;
+            }
+
+            #main .container{
+                width: 100%;
+                height: 100%;
+                padding: 0;
+            }
+
+            .img-group{
+                height: 100%;
+                display: inline-block;
+            }
+
+            #main .image{
+                width: 100%;
+                height: calc(100% / 3);
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div class="container">
+            <div class="logo"></div>
+            <div class="menu-btn"></div>
+            <div class="btn-group">
+                <a href="https://www.google.com/?hl=zh_tw">
+                    <div class="btn">1</div>
+                </a>
+
+                <a href="https://www.youtube.com/">
+                    <div class="btn">2</div>
+                </a>
+
+                <a href="https://zh-tw.facebook.com/">
+                    <div class="btn">3</div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="container">
+            <div class="img-group">
+                <div id="x" class="image"></div>
+                <div id="y" class="image"></div>
+                <div id="z" class="image"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
