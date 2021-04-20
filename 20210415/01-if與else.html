@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: plum;
+        }
+
+        .checked {
+            background-color: salmon;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="box1">我是一個會換色der箱子</div>
+
+    <script>
+
+        // 誰？
+        var box = document.querySelector('.box1')
+
+        // 要做
+        // box.classList.add('checked')
+        // box.classList.remove('checked')
+
+        // if (狀況) { 符合狀況的話會做的 } else { 不符合狀況的話會做的 }
+
+        // 何時
+        box.onclick = function () {
+            if (box.classList.contains('checked')) {
+
+                box.classList.remove('checked')
+            } else {
+                box.classList.add('checked')
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

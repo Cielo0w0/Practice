@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <label for="score">請輸入分數</label>
+    <input type="text" name="score" id="score" value="">
+    <button id="submit">審查</button>
+    <span id="result"></span>
+
+    <script>
+        var score = document.querySelector('#score')
+        var submit = document.querySelector('#submit')
+        var result = document.querySelector('#result')
+
+        submit.onclick = function () {
+
+            if (score.value > 100) {
+
+                result.innerHTML='您的分數是' + score.value + '分，超過一百分!'
+                
+            } else if (score.value == 100) {
+                result.innerHTML='您的分數是' + score.value + '分，等級為甲上!'
+
+            } else if (score.value >= 90) {
+                result.innerHTML='您的分數是' + score.value + '分，等級為乙等!'
+
+            } else if (score.value >= 80) {
+                result.innerHTML='您的分數是' + score.value + '分，等級為丙等!'
+
+            } else if (score.value >= 70) {
+                result.innerHTML='您的分數是' + score.value + '分，等級為丁等!'
+
+            } else if (score.value >= 60) {
+                result.innerHTML='您的分數是' + score.value + '分，等級為戊等!'
+
+            } else if (score.value >= 0) {
+                if (score.value == '') {
+                    result.innerHTML='錯誤！請填入數字！'
+                } else {
+                    result.innerHTML='您的分數是' + score.value + '分，等級為己等!'
+                }     
+            } else {
+                result.innerHTML='您的分數是' + score.value + '分，錯誤！'
+            }
+        }
+    </script>
+</body>
+
+
+
+</html>

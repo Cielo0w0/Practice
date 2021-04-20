@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(243, 6, 6);
+        }
+
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(6, 185, 21);
+        }
+
+        .box3 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(15, 82, 136);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">HI</div>
+    <div class="box2">HELLO</div>
+    <div class="box3">HOLA</div>
+    
+    <script>
+        document.querySelector('.box1')
+        // 要跟css寫得一模一樣
+
+        console.log('安安')
+        // ''=字串
+        console.log(123)
+        // 數字
+        console.log('abc')
+        // 字串
+
+        var string = '123'
+        var x = '安'
+
+        console.log(string + string)
+
+
+        var number = 123
+
+        var boolean = true
+        var boolean = false
+
+        console.log(x * 10)
+        console.log(string * string)
+
+
+        // 幫要改的東西取好叫一點的名字
+        var box1 = document.querySelector('.box1')
+        var box2 = document.querySelector('.box2')
+        var box3 = document.querySelector('.box3')
+
+        // 幫要改的東西決定被點的時候會幹嘛
+        //  被點時輸出顆顆
+        box1.onclick = function () {
+            console.log('顆顆')
+        }
+
+        // 幫要改的東西決定被點的時候會幹嘛
+        //  被點時輸出哈哈
+        box2.onclick = function () {
+            console.log('哈哈')
+        }
+
+        // 點下去變色
+        box1.onclick = function () {
+            box1.classList.add('box3')
+        }
+
+        box2.onclick = function () {
+            box1.classList.remove('box3')
+        }
+     
+        // 輸出字串     
+        document.write("這是測試網頁內容");
+
+    </script>
+
+</body>
+
+</html>

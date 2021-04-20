@@ -157,8 +157,8 @@
         }
 
         .option-list {
-            width: 1230px;
-            height: 390px;
+            /* width: 1230px; */
+            /* height: 390px; */
             z-index: 2;
 
             border-width: 1px 1px 2px;
@@ -171,19 +171,21 @@
 
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
 
             display: none;
         }
 
         .option-list-up {
             width: 100%;
-            height: 350px;
+            /* height: 350px; */
             margin-top: 55px;
             padding: 18px 0 0;
             background-color: #f2f2f2;
 
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: flex-start;
             align-items: flex-start;
         }
@@ -208,7 +210,7 @@
 
         .option-list-up-card .pf {
             font-size: 13px;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             color: #262626
         }
 
@@ -219,6 +221,7 @@
         .option-list-up-card a:hover {
             text-decoration: underline;
             text-decoration-color: black;
+
         }
 
         .option-list-down {
@@ -419,6 +422,9 @@
         }
 
         .block2 .text {
+            line-height: 20px;
+            font-size: 15px;
+
             max-width: 128px;
             text-align: center;
             color: black;
@@ -590,7 +596,8 @@
 
         .block6 {
             width: 100%;
-            margin: 48px 0;
+            min-height: 80px;
+            margin: 20px 0;
 
             display: flex;
             justify-content: flex-start;
@@ -603,12 +610,20 @@
         }
 
         .block6 a {
+            width: 28px;
+            height: 28px;
             margin: 10px;
+            background-color: black;
         }
 
         .block6 a img {
             width: 28px;
             height: 28px;
+        }
+
+        .block6 a img:hover{
+            opacity: 0.7;
+
         }
 
         /* block6結束 */
@@ -649,7 +664,7 @@
             font-weight: 600;
         }
 
-        .pf {
+        footer .pf {
             padding: 8px 0;
             font-size: 11px;
             line-height: 16px;
@@ -686,6 +701,10 @@
             width: 30px;
             height: 30px;
             margin-right: 15px;
+        }
+
+        .hamburger-list {
+            display: none;
         }
 
         @media(max-width:1687px) {
@@ -748,6 +767,10 @@
         }
 
         @media(max-width:1080px) {
+            nav .container {
+                width: 96%;
+            }
+
             nav .links .link {
                 margin: 0 8px;
                 text-decoration: none;
@@ -769,7 +792,8 @@
             .block5 .card {
                 width: calc(50% - 12px);
                 max-width: 475px;
-                max-height: 418px;
+                max-height: 550px;
+                height: unset;
                 margin-bottom: 48px;
             }
 
@@ -830,7 +854,7 @@
             }
         }
 
-        @media(max-width:900px) {
+        @media(max-width:950px) {
             nav .links .link-900-del {
                 display: none;
             }
@@ -848,6 +872,10 @@
                 background-image: url(./img/下拉式箭頭.jpg);
                 background-position: center;
                 background-size: cover;
+            }
+
+            .block4 {
+                padding-top: 10px;
             }
         }
 
@@ -911,15 +939,59 @@
                 right: 20px;
             }
 
-            /* .option-768 .hamburger-cross {
-                display: none;
-            } */
-
-
             .block1-text {
                 position: absolute;
                 top: 35%;
                 left: 6%;
+            }
+
+            nav {
+                position: relative;
+            }
+
+
+            .hamburger-list {
+                width: 100vh;
+
+                position: absolute;
+                top: 55px;
+                left: 0px;
+
+                border-bottom: 1px solid #000;
+
+                z-index: 3;
+                background-color: #e6e6e6;
+
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+            }
+
+            .hamburger-list a {
+                width: 100%;
+                height: 52px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                background-color: #f2f2f2;
+
+                padding: 14px 15px 15px;
+                margin-bottom: 1px;
+            }
+
+            .pf {
+                color: #262626;
+                font-size: 15px;
+            }
+
+
+            .active {
+                display: flex;
+            }
+
+            .hamburger-list:hover {
+                display: flex;
             }
         }
 
@@ -1033,10 +1105,17 @@
                 padding: 13px 0 0 0;
             }
 
-            .block3 .card,
+
             .block5 .card {
-                max-height: 373px;
-                margin-bottom: 10px;
+                margin-bottom: 0px;
+                max-height: 330px;
+            }
+
+            .block5 .block5-3,
+            .block5 .block5-4 {
+                margin-bottom: 0px;
+                min-height: 250px;
+                max-height: 300px;
             }
 
 
@@ -1074,6 +1153,10 @@
                 width: 100%;
                 max-height: 418px;
                 margin-bottom: 48px;
+            }
+
+            .block6 {
+                margin: 0 0 20px 0;
             }
 
             .footer-up {
@@ -1425,9 +1508,10 @@
 
                 <!-- 1366px -->
                 <!-- 768px -->
-                <a href="" class="option-768 ">
+                <div href="" class="option-768 ">
+
                     <div class="hamburger-line"></div>
-                    <!-- <div class="hamburger-list">
+                    <div class="hamburger-list">
                         <a href="">
                             <div class="pf">Microsoft 365</div>
                         </a>
@@ -1467,9 +1551,10 @@
                         <a href="">
                             <div class="pf">檢視網站地圖</div>
                         </a>
-                    </div> -->
-                    <div class="hamburger-cross"></div>
-                </a>
+                    </div>
+
+                </div>
+
                 <!-- 768px -->
             </div>
         </div>
@@ -1906,6 +1991,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        var hamburger_line = document.querySelector('.hamburger-line')
+        var hamburger_list = document.querySelector('.hamburger-list')
+
+        hamburger_line.onclick = function () {
+            if (hamburger_list.classList.contains('active')) {
+                hamburger_list.classList.remove('active')
+                hamburger_line.style='background-image: url(./img/menu.jpg)'
+            } else {
+                hamburger_list.classList.add('active')
+                hamburger_line.style='background-image: url(./img/cross.jpg)'
+            }   
+        }
+
+
+
+
+    </script>
 </body>
 
 </html>

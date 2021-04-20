@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box-1" class="box">1</div>
+    <div id="box-2" class="box">2</div>
+    <div id="box-3" class="box">3</div>
+    <div id="box-4" class="box">4</div>
+
+    <!--  ------------------------------------------------
+    以上用陣列存在同一個地方＝var box = document.querySelectorAll('.box')
+    ------------------------------------------------ -->
+
+
+    <script>
+        var box = document.querySelectorAll('.box')
+        //  陣列 ＝ array ＝ arr 
+
+
+        box[0].onclick = function () { }
+
+        box[1].onclick = function () { }
+
+        box[2].onclick = function () { }
+
+        box[3].onclick = function () { }
+
+        // ------------------------------------------------
+        // 以上用迴圈來代替，只打一句，卻同樣可以一個一個叫出來，並做onclick事件
+        // ------------------------------------------------
+
+
+        // 索引值 index  ＊從0開始
+        // console.log(a[0]);
+
+        // 重複在做的東西，可以用「迴圈」。
+        // 常見的迴圈：「for迴圈」＝「 for loop」
+
+
+        // （ 第一步：初始值   ;     第二步：條件        ;  第四步：步徑值（+1，得1） -> 第二步（符合） -> 第三步 （輸出1）-> 第四步（+1，得2）.....第四步（+1，得10），條件不符，跳出迴圈外）
+        for (let index = 0; index < 10; index++) {
+            // 條件符合，就做第三步輸出，得出0：
+            console.log(index);
+            // 取代
+        }
+        // 當條件不符，就會跳出迴圈外
+
+
+
+        // 試做
+        for (let index = 0; index < box.length; index++) {
+            box[index].onclick = function () {
+                console.log("你現在按到的是第 " + index + " 個box");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
