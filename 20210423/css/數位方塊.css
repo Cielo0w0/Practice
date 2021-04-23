@@ -1,0 +1,189 @@
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+}
+
+* {
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.nav-container {
+    padding: 0 32px;
+    max-width: 1280px;
+    height: 92px;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.nav-btn {
+    font-size: .95rem;
+    line-height: 2.3rem;
+    font-weight: 500;
+    margin: 0px 8px 0px 24px;
+    color: black;
+}
+
+#nav-btn {
+    color: black;
+}
+
+.customer {
+    font-size: 30px;
+    margin: 8px 4px 8px 12px;
+}
+
+.shopping-cart {
+    font-size: 25px;
+}
+
+.carousel-inner img {
+    height: calc(100vh - 92px);
+}
+
+.carousel-indicators li {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+}
+
+.introduce-container {
+    max-width: 1536px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+.introduce-container h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.introduce-container p {
+    font-size: 1rem;
+    line-height: 1.625;
+    margin-bottom: 24px;
+}
+
+.introduce-container .line {
+    border-radius: 5px;
+    width: 4rem;
+    height: .25rem;
+    background-color: rgb(99, 102, 241);
+    margin-bottom: 76px;
+}
+.card{
+    padding: 16px;
+    border: none;
+}
+.card-logo{
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+    border-radius: 60%;
+    background-color: rgb(224,231,255);
+    padding: 16px;
+}
+
+.card-logo svg{
+    width: 2.5rem;
+    height: 2.5rem;
+    color: rgb(99,102,241);
+}
+
+.card-link{
+    margin-top: 12px;
+}
+
+.btn-primary{
+    padding: 8px 32px;
+    margin-top: 64px;
+    background-color: rgb(99,102,241);
+}
+
+.section2-text{
+    margin-bottom: 80px;
+}
+
+.section2 img{
+    padding: 8px;
+}
+
+.section3-top-text{
+    width: 66.66%;
+    min-width: 1024px;
+}
+
+
+@media(min-width: 500px) {
+    .section2-text h1,
+    .section2-text p{
+        width: 100%;
+    }
+}
+
+@media(min-width: 640px) {
+    .introduce-container {
+        max-width: 640px;
+    }
+
+    .section1-top-text h2 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+}
+
+@media(min-width: 768px) {
+    .introduce-container {
+        max-width: 768px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .introduce-container {
+        max-width: 1024px;
+    }
+
+    .section1-top-text p {
+        width: 75%;
+    }
+
+    .section2-text{
+        flex-direction: row;
+        width: 100%;
+    }
+    .section2-text h1{
+        width: 33.33%;
+    }
+    
+    .section2-text p{
+        width: 66.66%;
+    }
+    
+}
+
+@media (min-width: 1280px) {
+    .introduce-container {
+        max-width: 1280px;
+    }
+
+    .section1-top-text p {
+        width: 50%;
+    }
+}
+
+@media (min-width:1536px) {
+    .introduce-container {
+        max-width: 1536px;
+    }
+}
