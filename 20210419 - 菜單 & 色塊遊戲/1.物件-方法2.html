@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .card-group {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+
+        .card {
+            width: 400px;
+            height: 700px;
+            background-color: wheat;
+            margin: 0 0 80px 0;
+        }
+
+        .photo {
+            width: 100%;
+            height: 70%;
+            background-color: pink;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            width: 100%;
+            height: 30%;
+            padding: 10px ;
+            background-color: plum;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-group"></div>
+
+    <script>
+
+        var card_group = document.querySelector('.card-group')
+
+        var card = [
+            // Cold_Brew_Lemonade = 
+            {
+                img: 'https://www.starbucks.com.tw/common/objects/images/product/20190529153033234.jpg',
+                name: '香檸蜜柚冷萃咖啡',
+                price: '$175',
+                contents: '檸檬清新的香氣，加入了紅柚醬與蜂蜜調和，更帶出冷萃咖啡本身的巧克力甘甜與柑橘的風味調性，讓柑橘類系風味完美的與咖啡結合，創造出平衡美妙的滋味。',
+            }
+            ,
+            // Caramel_Java_Chip = 
+            {
+                img: 'https://www.starbucks.com.tw/common/objects/images/product/20200310182856151.jpg',
+                name: '焦糖可可碎片星冰樂',
+                price: '$185',
+                contents: '暢銷口味之一，融合了星巴克咖啡、鮮奶、焦糖風味糖漿及可可碎片，加上鮮奶油與焦糖醬，香甜細緻的風味與多層次口感，深獲喜愛。',
+            }
+            ,
+            // Iced_Matcha = 
+            {
+                img: 'https://www.starbucks.com.tw/common/objects/images/product/20200310182608163.jpg',
+                name: '冰抹茶咖啡',
+                price: '$175',
+                contents: '將經典的抹茶粉與義式濃縮咖啡結合，咖啡與茶融合出層次豐富且美麗的一款飲料。',
+            }
+            ,
+            // Nitro_Cold_Brew = 
+            {
+                img: 'https://www.starbucks.com.tw/common/objects/images/product/20190520113541369.jpg',
+                name: '經典特調氮氣冷萃咖啡',
+                price: '$195',
+                contents: '氮氣冷萃咖啡再加入香草風味糖漿所調製的香甜奶油，飄浮在氮氣冷萃咖啡上方，更帶出咖啡的焦糖香甜感與圓潤的口感。微妙甜美天鵝絨般的咖啡，更容易讓人愛不釋手。',
+            }
+        ]
+
+        for (let index = 0; index < card.length; index++) {
+            card_group.innerHTML += `    
+            <div class="card">
+                <div class="photo">
+                    <img src="${card[index].img}" alt="">
+                </div>
+                <div class="content">
+                    <p>品名:${card[index].name}</p>
+                    <p>價位:${card[index].price}</p>
+                    <p>內容物:</br>${card[index].contents}</p>
+                </div>
+            </div>
+        `
+        }
+
+    </script>
+</body>
+
+</html>
