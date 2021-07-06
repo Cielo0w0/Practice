@@ -182,9 +182,9 @@
 
             // 確認「要被計算的值」有好好打出值（防呆），是否爲「空字串」、「輸入的字非數字」、「負值數字」的情況，
             // 只要有其中一個符合上述情況（故彼此用or＝||來間隔），BMI就無法計算，故用alert彈跳視窗提醒
-            if (height.value == '' || weight.value == ''||isNaN(height.value) ||isNaN(weight.value)) {
+            if (height.value == '' || weight.value == '' || isNaN(height.value) || isNaN(weight.value)) {
                 window.alert('請正確輸入數值')
-            }else if(height.value < 0 || weight.value < 0){
+            } else if (height.value < 0 || weight.value < 0) {
                 window.alert('請輸入正整數')
             } else {
                 // 把結果框的透明度從0（透明）改成.active的1（不透明），讓我們可以看到
